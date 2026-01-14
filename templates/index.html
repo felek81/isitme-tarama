@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>İşitme Tarama Sistemi</title>
-<link rel="stylesheet" href="/static/style.css">
-<script src="/static/menu.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+    
 </head>
 <body>
 
@@ -27,7 +28,7 @@
 <div class="slider">
 
     <div class="slide active" onclick="location.href='/bilgilendirme#bolum1'">
-        <img src="/static/slider1.jpg">
+        <img src="{{ url_for('static', filename='img/slider7.jpg') }}">
         <div class="slide-text">Geriatrik Odyoloji Nedir?</div>
     </div>
 
@@ -122,3 +123,4 @@ setInterval(() => {
 
 </body>
 </html>
+
