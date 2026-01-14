@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>İşitme Tarama Anketi</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="card">
+<h1>İşitme Tarama Anketi</h1>
+
+<form method="POST">
+
+{% set sorular = [
+"Yeni biriyle tanışırken, onu yanlış duyabileceğiniz endişesiyle gerginlik hissediyor musunuz?",
+"Aile üyelerinizle konuşurken onları duymakta zorlandığınız için kendinizi kötü hissettiğiniz oluyor mu?",
+"Biri fısıltıyla konuştuğunda onu duymakta zorluk çekiyor musunuz?",
+"Günlük işlerinizi hallederken (banka, market, telefon görüşmesi vb.) iletişim kurmakta zorlandığınız oluyor mu?",
+"Arkadaş, akraba veya komşu ziyaretlerinde konuşulanları anlamakta güçlük çekiyor musunuz?",
+"Duyma endişesiyle sinema, toplantı veya ibadethane gibi toplu alanlara gitmekten kaçınıyor musunuz?",
+"Duyamadığınız için aile üyeleriyle tartıştığınız veya yanlış anlaşıldığınız oluyor mu?",
+"Televizyon veya radyo dinlerken sesi başkalarından daha fazla açma ihtiyacı duyuyor musunuz?",
+"İşitme durumunuzun, kişisel veya sosyal hayatınızı zorlaştırdığını düşünüyor musunuz?",
+"Restoran veya kafe gibi ortamlarda, arkadaşlarınızla konuşurken duymakta zorlanıyor musunuz?"
+] %}
+
+{% for i in range(0,10) %}
+<p><b>{{ i+1 }}.</b> {{ sorular[i] }}</p>
+<label><input type="radio" name="q{{i+1}}" value="0" required> Hayır</label>
+<label><input type="radio" name="q{{i+1}}" value="2"> Bazen</label>
+<label><input type="radio" name="q{{i+1}}" value="4"> Evet</label>
+<hr>
+{% endfor %}
+
+<button class="btn">Anketi Bitir</button>
+
+</form>
+
+<a href="/" class="btn">⬅ Ana Menü</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>İşitme Tarama Sistemi</title>
+<link rel="stylesheet" href="/static/style.css">
+<script src="/static/menu.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div style="margin-left:15px;">İşitme Tarama Sistemi</div>
+</div>
+
+<div id="sideMenu" class="side-menu">
+    <a href="/">🏠 Giriş</a>
+    <a href="/bilgilendirme">📘 Bilgilendirme</a>
+    <a href="/anket">📝 Anket</a>
+    <a href="/kitap">📚 Kitap</a>
+    <a href="/sss">Sık Sorulan Sorular</a>
+
+</div>
+
+<div class="card">
+
+<div class="slider">
+
+    <div class="slide active" onclick="location.href='/bilgilendirme#bolum1'">
+        <img src="/static/slider1.jpg">
+        <div class="slide-text">Geriatrik Odyoloji Nedir?</div>
+    </div>
+
+    <div class="slide" onclick="location.href='/bilgilendirme#bolum2'">
+        <img src="/static/slider2.jpg">
+        <div class="slide-text">Geriatrik Bireylerde İşitme Sisteminde Yaşa Bağlı Değişimler</div>
+    </div>
+
+    <div class="slide" onclick="location.href='/bilgilendirme#bolum3'">
+        <img src="/static/slider3.jpg">
+        <div class="slide-text">Geriatrik İşitme Kayıplarının Türleri</div>
+    </div>
+
+    <div class="slide" onclick="location.href='/bilgilendirme#bolum4'">
+        <img src="/static/slider4.jpg">
+        <div class="slide-text">Geriatrik Grup ve Demans Riski</div>
+    </div>
+
+    <div class="slide" onclick="location.href='/bilgilendirme#bolum5'">
+        <img src="/static/slider5.jpg">
+        <div class="slide-text">Geriatrik Bireylerde Odyolojik Değerlendirme</div>
+    </div>
+
+    <div class="slide" onclick="location.href='/bilgilendirme#bolum6'">
+        <img src="/static/slider6.jpg">
+        <div class="slide-text">Yaşlılarda İşitme Kaybının Bilişsel ve Psikososyal Etkileri</div>
+    </div>
+
+    <div class="slide" onclick="location.href='/bilgilendirme#bolum7'">
+        <img src="/static/slider7.jpg">
+        <div class="slide-text">Geriatrik İşitme Rehabilitasyonu ve Odyoloğun Rolü</div>
+    </div>
+
+    <a class="prev" onclick="changeSlide(-1)">❮</a>
+    <a class="next" onclick="changeSlide(1)">❯</a>
+
+</div>
+
+<div class="dots">
+    <span class="dot active" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+</div>
+
+<br>
+
+<button class="btn" onclick="location.href='/anket'">
+İşitmenizi kısa ve basit bir anketle değerlendirmek ister misiniz?
+</button>
+
+</div>
+
+<script>
+let slideIndex = 0;
+showSlide(slideIndex);
+
+function changeSlide(n) {
+    showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+
+    if (n >= slides.length) { slideIndex = 0 }
+    if (n < 0) { slideIndex = slides.length - 1 }
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex].classList.add("active");
+    dots[slideIndex].classList.add("active");
+}
+
+setInterval(() => {
+    changeSlide(1);
+}, 5000);
+</script>
+
+</body>
+</html>

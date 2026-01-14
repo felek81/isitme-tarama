@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="card">
+<h1>📊 İstatistikler</h1>
+
+<p>Toplam Katılımcı: <b>{{ count }}</b></p>
+<p>Ortalama Puan: <b>{{ avg }}</b></p>
+
+<p>🟢 0–8: {{ green }}</p>
+<p>🟡 10–24: {{ yellow }}</p>
+<p>🔴 26+: {{ red }}</p>
+
+<a href="/" class="btn">⬅ Ana Menü</a>
+</div>
+</body>
+</html>
